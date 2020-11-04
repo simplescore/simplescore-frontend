@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if ! hash jq 2>/dev/null; then
+    echo "No jq binary found" >&2
+    exit 1
+fi
+
+VARS=../vars.json
+
+cat << EOF > src/_vars.js
+export const BASE_URL = "$(jq -r '.host' "$VARS")$(jq -r '.baseRoute' "$VARS")";
+EOF

@@ -1,0 +1,17 @@
+.songs { 
+    thead td {
+        font-weight: bold;
+    }
+
+    tbody {
+        cursor: pointer;
+
+        tr {
+            border-top: 1px solid #aaa;
+        }
+
+        tr:hover {
+            background: adjust-color(#fff, $lightness: -22%);
+        }
+    }
+}
